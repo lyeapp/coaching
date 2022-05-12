@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Responsive Image Grid</title>
+    <style>
+        /* Coding With Nick */
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+.header{
+    text-align: center;
+    padding: 32px;
+}
+.header h1{
+    font-family: 'Sacramento';
+    font-size: 50px;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 100px 100px 100px;
+}
+.column{
+    flex: 25%;
+    max-width: 25%;
+}
+.img-hover-zoom{
+    height: auto;
+    overflow: hidden;
+    border: 5px solid #ffff;
+}
+.img-hover-zoom img{
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition:  transform .5s ease;
+}
+.img-hover-zoom:hover img{
+    transform: scale(1.5);
+}
+
+@media screen and (max-width: 800px) {
+    .column{
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .column{
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+        </style>
+</head>
+<!-- Coding With Nick -->
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>educare gallery</h1>
+    </div>
+
+    <!-- Photo Grid -->
+    <div class="row">
+
+        <div class="column">
+            <div class="img-hover-zoom">
+                <img src={% static 'c9.jpg' %} style="width:100%" alt="">
+            </div>
+            <div class="img-hover-zoom">
+                <img src={% static 'c2.jpg' %} style="width:100%" alt="">
+            </div>
+            <div class="img-hover-zoom">
+                <img src={% static 'c3.jpg' %} style="width:100%" alt="">
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="img-hover-zoom">
+                <img src={% static 'd.jpg' %} style="width:100%" alt="">
+            </div>
+            <div class="img-hover-zoom">
+                <img src={% static 'c5.jpg' %} style="width:100%" alt=""> 
+            </div>
+            <div class="img-hover-zoom">
+                <img src={% static 'c6.jpg' %} style="width:100%" alt="">
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="img-hover-zoom">
+                <img src={% static 'c7.jpg' %} style="width:100%" alt="">
+            </div>
+            <div class="img-hover-zoom">
+                <img src={% static 'd1.jpg' %} style="width:100%" alt="">
+            </div>
+            <div class="img-hover-zoom">
+                <img src= {% static 'c10.jpg' %} style="width:100%" alt=""> 
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="img-hover-zoom">
+                <img src={% static 'c11.jpg' %} style="width:100%" alt="">
+            </div>
+            <div class="img-hover-zoom">
+                <img src={% static 'c1.jpg' %} style="width:100%" alt="">
+            </div>
+            <div class="img-hover-zoom">
+                <img src={% static 'c12.jpg' %} style="width:100%" alt="">
+            </div>
+        </div>
+
+    </div>
+    {% include 'navbar.html' %}
+  {% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% load crispy_forms_filters %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+{% block content %}
+<div class="container">
+  <div><h1>Enter Details</h1>
+  </div>
+  <div class="col-ma-4"></div>
+ <div>
+<form method="post" action=""  enctype="multipart/form-data" >
+  <div class="col-ma-4"></div>
+ <div>
+    {% csrf_token %} 
+    {{form|crispy}}
+    
+    <button type="submit">Submit</button>
+  </div>
+</form>
+</div>   
+{%  endblock content %}
+</body>
+</html>

@@ -1,0 +1,58 @@
+{% block content %}
+    <div class="container">
+        <form action="{% url 'mymodule:user_register' %}" method="post">
+            {% csrf_token %}
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Register</div>
+                    <div class="panel-body">
+                        {% if error_message %}
+                            <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+                        {% endif %}
+                       
+                        <div class="form-group clearfix">
+                            <label for="{{ form.studentname.id_for_label }}" class="col-md-4 control-label text-right">studentname<span class="text-red">*</span>:</label>
+                            <div class="col-md-6">
+                                {{ form.name }}
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label for="{{ form.email.id_for_label }}" class="col-md-4 control-label text-right">Email<span class="text-red">*</span>:</label>
+                            <div class="col-md-6">
+                                {{ form.email }}
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label for="{{ form.phone_number.id_for_label }}" class="col-md-4 control-label text-right">Phone number:<span class="text-red">*</span>:</label>
+                            <div class="col-md-6">
+                                {{ form.phone_number }}
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label for="{{ form.gender.id_for_label }}" class="col-md-4 control-label text-right">Gender:</label>
+                            <div class="col-md-6">
+                                {{ form.gender }}
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label for="{{ form.address.id_for_label }}" class="col-md-4 control-label text-right">Address:</label>
+                            <div class="col-md-6">
+                                {{ form.address }}
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label for="{{ form.qualification.id_for_label }}" class="col-md-4 control-label text-right">Qualification:</label>
+                            <div class="col-md-6">
+                                {{ form.qualification }}
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 col-md-offset-4">
+                            <input type="submit" value="Register" class="btn btn-success">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

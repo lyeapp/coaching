@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        img{
+        width:1600px;
+        height:500px;
+    }
+    p{
+        text-align:left;
+    }
+    form{
+        text-align: left;
+       
+    }
+        </style>
+</head>
+<body>
+  {% include 'navbar.html' %}
+    <img src={% static 'con.jpg' %}> 
+    
+    <p>
+    <h2>Address</h2>    
+H.O.<br>
+
+4DXI EDUCARE PVT LTD<br>
+
+CIN :  U80903KL2020PTC061460<br>
+
+Venus Arcade , Kaniyapilly Road , Beside Hotel Holiday Inn , Vennala ,Ernakulam Kerala- 682028<br>
+
+ +91 95622 95622<br>
+ +91 95622 00024<br>
+ educare@4dxi.com<br>
+Branch  :  KMP Tower, P.O Junction Muvatupuzha, Kerala, India 686661<br>
+Phone : +91 97786 00476<br>
+    </p>
+    <form class="form-inline" action="/action_page.php">
+        <div class="form-group">
+            <label for="text" >Your Name:</label>
+            <input type="text" class="form-control" id="text">
+          </div>
+        <div class="form-group">
+          <label for="email">Your Email:</label>
+          <input type="email" class="form-control" id="email">
+        </div><br>
+        <div class="form-group">
+            <label for="num">Your Mobile Number:</label>
+            <input type="number" class="form-control" id="num">
+          </div>
+        <div class="form-group">
+          <label for="sub">Subject:</label>
+          <input type="text" class="form-control" id="sub">
+        </div><br>
+        <div class="form-group">
+            <label for="comment">your message:</label>
+            <textarea class="form-control" rows="5" id="comment"></textarea>
+          </div><br>
+        <button type="submit" class="btn btn-danger">Submit</button>
+      </form>
+ 
+    {% include 'footer.html' %}
+
+</body>
+</html>

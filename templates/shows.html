@@ -1,0 +1,63 @@
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+{% block content %}
+       
+    <div class="container"> 
+    <h1>Class Management System</h1>
+    
+    <table class="content-table">
+        <thead>
+            <tr>
+              
+                <th>STUDENT ID</th>
+                <th>STUDENT NAME</th>
+                <th>DOB</th>
+                <th>GENDER</th>
+                <th>GRADE</th>
+                <th>EMAIL</th>
+                <th>CONTACT NO</th>
+                <th>IMAGE</th>
+        
+                <th colspan="2">ACTION..</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for products in emp %}
+        <tr>
+        <td>{{products.id}}</td>
+        <td>{{products.Studentname}}</td>
+        <td>{{products.DOB}}</td>
+        <td>{{products.Gender}}</td>
+        <td>{{products.Grade}}</td>
+        <td>{{products.email}}</td>
+        <td>{{products.contactno}}</td>
+        <td><img src="{{products.simage.url}}" style="width:70px;height:100px"></td>
+        
+        
+
+        <td><a href="{% url 'edit_s' products.id %}">Edit</a>
+            <br>
+            <a href="{% url 'delete_s' products.id %}">Delete</a>
+        </td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>    
+{% endblock content %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>HOPES COACHING CENTER</title>
+
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+    <img src={% static 'c.jpg' %}
+  {%if request.user.is_authenticated%}
+    
+  {%else%}
+   
+  {%endif%}
+
+
+  {%block content%}
+
+  {%endblock content%}
+
+<br><br>
+  {% include 'footer.html' %}
+</body>
+
+
+</html>
